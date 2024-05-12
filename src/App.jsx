@@ -6,7 +6,6 @@ import ProjectDetails from './components/ProjectDetails';
 import { useTypedSelector } from './hooks/useTypedSelector';
 
 function App() {
-	const tasksState = useTypedSelector(state => state.tasks);
 	const projectsState = useTypedSelector(state => state.projects);
 
 	// const [projectsState, setProjectsState] = useState({
@@ -108,7 +107,8 @@ function App() {
 		project => project.id === projectsState.selectedProjectId
 	);
 
-	let content = <ProjectDetails project={selectedProject} />;
+	let content = <ProjectDetails {...selectedProject} />;
+	console.log('selectedProject: ', selectedProject);
 
 	if (projectsState.selectedProjectId === null) {
 		content = <NewProjectForm />;

@@ -9,7 +9,7 @@ export interface IProject {
 	id: undefined | null | number;
 	title: string;
 	description: string;
-	dueDate: Date;
+	dueDate: string;
 }
 
 interface IInitialState {
@@ -34,7 +34,7 @@ export const projectsSlice = createSlice({
 		},
 
 		handleAddProject: (state, action) => {
-			console.log('action: ', action);
+			console.log('action: ', action.payload);
 			console.log('handleAddProject');
 
 			const newProject = {
@@ -74,7 +74,7 @@ export const projectsSlice = createSlice({
 
 			Swal.fire({
 				title: 'Success!',
-				text: 'Your project is deleted!',
+				text: 'Your project was deleted!',
 				icon: 'success',
 				confirmButtonText: 'Okay!',
 			});

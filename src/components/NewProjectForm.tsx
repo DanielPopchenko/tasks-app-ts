@@ -56,23 +56,22 @@ const NewProjectForm = () => {
 			<div className='w-[35rem] mt-16'>
 				<menu className='flex items-center justify-end gap-4 my-4'>
 					<li>
-						<Button light onClick={handleCancelProject}>
-							Cancel
-						</Button>
+						<Button onClick={handleCancelProject}>Cancel</Button>
 					</li>
 					<li>
-						<button
-							className='px-6 py-2 rounded-md bg-stone-800 text-stone-50 hover:bg-stone-900'
-							onClick={handleSave}
-						>
-							Save
-						</button>
+						<Button onClick={handleSave}>Save</Button>
 					</li>
 				</menu>
 
 				<div>
 					<Input label='Title' type='text' ref={title} />
-					<textarea className={inputClasses} ref={description} />
+					<p className='flex flex-col gap-1 my-4'>
+						<label className='text-sm uppercase font-bold text-stone-500'>
+							Description
+						</label>
+						<textarea className={inputClasses} ref={description} />
+					</p>
+
 					<Input label='Due to' type='date' ref={dueDate} />
 				</div>
 			</div>
